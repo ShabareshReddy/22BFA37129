@@ -47,7 +47,7 @@ userRouter.post("/login",async(req,res)=>{
             data: error.response?.data || null
         });
     }
-})
+});
 
 
 
