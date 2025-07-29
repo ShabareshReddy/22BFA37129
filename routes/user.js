@@ -14,10 +14,10 @@ userRouter.post("/register",async(req,res)=>{
         const register=await axios.post("http://20.244.56.144/evaluation-service/register",{
             email,name,mobileNo,githubUserName,rollNo, accessCode
         });
-        return res.send({
-            msg:"You can register only once Do not forget to save Your clientID and clientSecret;you cannot retrive them again"
-           
-        });
+       return res.send({
+    msg: "You can register only once. Do not forget to save Your clientID and clientSecret; you cannot retrieve them again",
+    data: { email, name, mobileNo, githubUserName, rollNo, accessCode,clientID,clientSecret }
+    });
     }catch(error){
     res.status(error.response?.status || 500).json({
         msg: error.message,
@@ -48,5 +48,9 @@ userRouter.post("/login",async(req,res)=>{
         });
     }
 })
+
+
+
+
 
 module.exports=userRouter
