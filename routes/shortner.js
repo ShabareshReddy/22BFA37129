@@ -26,13 +26,4 @@ shortnerRouter.post('/shorturls', (req, res) => {
     });
 });
 
-// Helper function to generate a random shortcode if not provided
-function generateRandomCode(length = 6) {
-    const chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-    return Array.from({ length })
-        .map(() => chars.charAt(Math.floor(Math.random() * chars.length)))
-        .join('');
-}
-
-
 module.exports=shortnerRouter
